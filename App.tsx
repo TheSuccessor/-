@@ -34,6 +34,13 @@ const SAMPLE_TEXT = `مرحباً بكم في البرنامج المطور.
 
 ثم علق الدكتور رشيد قائلاً: إنها آية عظيمة.`;
 
+// Minimalist Logo Component using Negative Space
+const Logo = () => (
+  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-stone-200 shrink-0">
+    <path fillRule="evenodd" clipRule="evenodd" d="M10 0C4.47715 0 0 4.47715 0 10V30C0 35.5228 4.47715 40 10 40H30C35.5228 40 40 35.5228 40 30V10C40 4.47715 35.5228 0 30 0H10ZM13 14C12.4477 14 12 14.4477 12 15V17C12 17.5523 12.4477 18 13 18H27C27.5523 18 28 17.5523 28 17V15C28 14.4477 27.5523 14 27 14H13ZM12 23C12 22.4477 12.4477 22 13 22H21C21.5523 22 22 22.4477 22 23V25C22 25.5523 21.5523 26 21 26H13C12.4477 26 12 25.5523 12 25V23Z" fill="currentColor"/>
+  </svg>
+);
+
 const App: React.FC = () => {
   const [inputText, setInputText] = useState<string>(SAMPLE_TEXT);
   const [customNames, setCustomNames] = useState<string[]>(DEFAULT_NAMES);
@@ -216,7 +223,10 @@ const App: React.FC = () => {
       
       {/* Invisible Header */}
       <header className="px-8 py-8 flex items-center justify-between sticky top-0 z-10 bg-[#0c0a09]/80 backdrop-blur-sm transition-all">
-        <h1 className="text-2xl text-stone-200 font-amiri opacity-80">منسق النصوص</h1>
+        <div className="flex items-center gap-4">
+          <Logo />
+          <h1 className="text-2xl text-stone-200 font-amiri opacity-80">منسق النصوص</h1>
+        </div>
         <div className="flex items-center gap-4">
            <button
               onClick={() => setIsSettingsOpen(true)}
