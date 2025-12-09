@@ -1,0 +1,5 @@
+{
+  "name": "Arabic Script Styler",
+  "description": "An interactive text editor that automatically formats Arabic text, highlighting Quranic verses and specific character names with distinct styles.",
+  "requestFramePermissions": []
+}
